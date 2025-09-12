@@ -130,6 +130,32 @@ header {
     background-color: var(--cor-texto-secundario);
 }
 
+/* Seção de Projetos na página Sobre */
+.projetos {
+    margin-top: 40px;
+}
+
+.lista-projetos {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-projetos li a {
+    display: block;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    color: var(--cor-primaria);
+    text-decoration: none;
+    border-radius: calc(var(--raio-borda) / 2);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.lista-projetos li a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
 /* Rodapé */
 footer {
     background-color: var(--cor-primaria);
