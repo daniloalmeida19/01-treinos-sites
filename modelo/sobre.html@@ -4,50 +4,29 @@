@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sobre Mim</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="shortcut icon" href="icons/sistemas-de-ti.png" type="image/x-icon">
+</head>
+<body>
+
+    <header>
+        <h1 class="titulo">Sobre Mim</h1>
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <p>Olá! Meu nome é [Seu Nome] e este é um site modelo criado para demonstrar a estrutura básica de uma página HTML.</p>
+        <p>Sou apaixonado por desenvolvimento web e estou sempre buscando aprender novas tecnologias e melhorar minhas habilidades.</p>
+        <p>Fique à vontade para explorar o site e conhecer mais sobre mim e meus projetos!</p>
+    
+        <div class="imagem-sobre">
+            <img src="imagens/tela-azul.jpg" alt="sobre mim" class="imagem">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Meu Site. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
