@@ -31,22 +31,20 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Meu Site. Todos os direitos reservados.</p>
+        <p>&copy; <span id="ano-atual"></span> Meu Site. Todos os direitos reservados.</p>
     </footer>
 
     <script>
-        // Exemplo de script simples para interatividade
+        // Executa o script quando o conteúdo do DOM estiver totalmente carregado.
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Página carregada e pronta!');
+
+            // Atualiza o ano no rodapé dinamicamente.
+            const anoAtualElemento = document.getElementById('ano-atual');
+            if (anoAtualElemento) {
+                anoAtualElemento.textContent = new Date().getFullYear();
+            }
         });
-        // Adicione mais scripts conforme necessário
-        // Exemplo:
-        function mostrarAlerta() {
-            alert('Bem-vindo ao meu site!');
-        }
-        mostrarAlerta();
-        // Adicione mais scripts conforme necessário
-        
     </script>
     
 </body>
