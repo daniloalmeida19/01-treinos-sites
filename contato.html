@@ -9,6 +9,30 @@
 </head>
 <body>
 
+    <style>
+        #form-whatsapp {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f8f8f8;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #form-whatsapp label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+    </style>
+
     <header>
         <h1 class="titulo">Contato</h1>
         <nav class="menu">
@@ -24,39 +48,81 @@
             <p>Você pode entrar em contato comigo diretamente através das informações abaixo ou preenchendo o formulário.</p>
             <p><strong>Email:</strong> <a href="mailto:danilo.websites@gmail.com">danilo.websites@gmail.com</a></p>
             <p><strong>WhatsApp:</strong> <a href="https://wa.me/551171180237" target="_blank">Clique para conversar</a></p>
-            <p><strong>Endereço:</strong> [Seu Endereço]</p>
+            
         </section>
+
+          <div class="video-container">
+                <!-- Vídeo local (coloque o arquivo em uma pasta "videos" no mesmo diretório) -->
+                <video autoplay muted loop playsinline controls>
+                    <source src="videos/lateral.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo.
+                </video>
+
+                <!-- Ou, para YouTube, descomente e substitua ID_DO_VIDEO:
+                <iframe src="https://www.youtube.com/embed/ID_DO_VIDEO" title="Vídeo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                -->
+            </div>
 
         <section class="formulario-contato">
             <h2>Envie uma Mensagem</h2>
-            <!-- 
-                INSTRUÇÃO PARA ATIVAR O FORMULÁRIO:
-                1. Crie uma conta gratuita no site https://formspree.io/
-                2. Crie um novo formulário e copie o "endpoint" (URL) fornecido.
-                3. Substitua "SEU_ENDPOINT_AQUI" na linha abaixo pelo seu endpoint.
-            -->
-            <form action="https://formspree.io/f/SEU_ENDPOINT_AQUI" method="POST">
+            <!-- O formulário agora será controlado por JavaScript para enviar para o WhatsApp -->
+            <div id="form-whatsapp">
                 <div class="form-grupo">
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" required>
                 </div>
-                <div class="form-grupo">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+
                 <div class="form-grupo">
                     <label for="mensagem">Mensagem:</label>
                     <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
                 </div>
-                <button type="submit" class="btn-enviar">Enviar</button>
-            </form>
+                <button type="button" id="btn-enviar-whatsapp" class="btn-enviar">Enviar via WhatsApp</button>
+            </div>
         </section>
 
-        <iframe src="https://maps.app.goo.gl/guwjGyFkBBGMseiT7" width="100%" height="400px" frameborder="0">Nosso Endereço</iframe>
+        <!-- 
+            O iframe do Google Maps foi atualizado para usar o link de "incorporação" padrão,
+            que é mais adequado para exibir um local.
+            - Adicionado 'title' para acessibilidade.
+            - Adicionado 'loading="lazy"' para melhor performance.
+            - Adicionado 'allowfullscreen' para permitir tela cheia.
+            - Adicionado 'style="border:0;"' para remover a borda padrão.
+        -->
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.206979207802!2d-46.38714622467169!3d-23.48880697884978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce6314e51166f9%3A0x829cfcd266f95919!2sR.%20Duarte%20Martins%20Mour%C3%A3o%2C%20135%20-%20Jardim%20Santa%20Margarida%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2008191-250!5e0!3m2!1spt-BR!2sbr" 
+            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa mostrando a localização"></iframe>
     </main>
 
     <footer>
-        <p>&copy; 2025 Meu Site. Todos os direitos reservados.</p>
+        <p>&copy; <span id="ano-atual"></span> Meu Site. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Atualiza o ano no rodapé dinamicamente.
+            const anoAtualElemento = document.getElementById('ano-atual');
+            if (anoAtualElemento) {
+                anoAtualElemento.textContent = new Date().getFullYear();
+            }
+
+            // Lógica para enviar formulário para o WhatsApp
+            const btnEnviar = document.getElementById('btn-enviar-whatsapp');
+            btnEnviar.addEventListener('click', function() {
+                const nome = document.getElementById('nome').value.trim();
+                const mensagem = document.getElementById('mensagem').value.trim();
+                const numeroWhatsApp = '551171180237'; // Seu número de WhatsApp com código do país
+
+                if (nome === '' || mensagem === '') {
+                    alert('Por favor, preencha seu nome e a mensagem.');
+                    return;
+                }
+
+                const textoMensagem = `Olá, meu nome é *${nome}*, Queria Saber se: ${mensagem}`;
+                const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(textoMensagem)}`;
+
+                window.open(urlWhatsApp, '_blank');
+            });
+        });
+    </script>
 </body>
 </html>
