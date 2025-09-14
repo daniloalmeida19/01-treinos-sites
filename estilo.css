@@ -74,6 +74,10 @@ header {
 .imagem-inicio, .imagem-sobre {
     margin-top: 20px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .imagem {
@@ -84,7 +88,6 @@ header {
     margin: 0 auto;
     border-radius: 50% /* Torna a imagem circular */;
     overflow: hidden;
-
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Adiciona transição suave */
 }
@@ -93,12 +96,21 @@ header {
     transform: translateY(-5px); /* Move a imagem 5px para cima */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra para dar profundidade */
     cursor: pointer;
+
+}
+h1, h2 {
+    color: var(--cor-primaria);
 }
 
 /* Estilo específico para a imagem da página inicial */
 .imagem-principal {
     max-width: 500px; /* Ajuste este valor conforme necessário */
     width: 100%;
+    border-radius: var(--raio-borda);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+
 }
 
 /* Seções e Formulário de Contato */
