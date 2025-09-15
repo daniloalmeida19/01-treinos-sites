@@ -25,12 +25,15 @@
         }
 
         .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px; /* ajuste conforme necessário */
             margin: 20px 0;
-            text-align: center;
         }
 
         .video-container video {
-            max-width: 100%;
+            max-width: 70%;
             height: auto;
         }
 
@@ -134,14 +137,10 @@
 
           <div class="video-container">
                 <!-- Vídeo local (coloque o arquivo em uma pasta "videos" no mesmo diretório) -->
-                <video autoplay muted loop playsinline controls>
+                <video autoplay muted loop playsinline>
                     <source src="videos/lateral.mp4" type="video/mp4">
                     Seu navegador não suporta vídeo.
                 </video>
-
-                <!-- Ou, para YouTube, descomente e substitua ID_DO_VIDEO:
-                <iframe src="https://www.youtube.com/embed/ID_DO_VIDEO" title="Vídeo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                -->
             </div>
 
         <section class="formulario-contato">
