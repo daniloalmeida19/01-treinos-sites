@@ -213,8 +213,29 @@ footer {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100%;   
 }
+
+/* Esconder display de tempo dos controles nativos (Chrome, Edge, Safari) */
+video::-webkit-media-controls-timeline,
+video::-webkit-media-controls-current-time-display,
+video::-webkit-media-controls-time-remaining-display {
+    display: none !important;
+}
+
+/* NÃO esconder todos os controles - remover regras que ocultam tudo (fallback perigoso) */
+/* Fallback visual: uma "capa" que esconde a barra/tempo em navegadores que não expõem os pseudo-elementos */
+.video-container .controls-cover {
+    position: absolute;
+    left: 6%;
+    right: 6%;
+    bottom: 8%;
+    height: 16px;
+    background: rgba(0, 0, 0, 0.25); /* ajuste a cor/transparência se desejar */
+    border-radius: 8px;
+    pointer-events: none; /* não bloqueia cliques nos controles */
+}
+
 /* 
    ========================================
    Responsividade para Dispositivos Móveis
