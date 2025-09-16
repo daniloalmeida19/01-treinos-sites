@@ -9,114 +9,6 @@
 </head>
 <body>
 
-    <style>
-
-        info-contato, .formulario-contato {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 400px; /* ajuste conforme necessário */
-            margin: 20px 0;
-        }
-
-        .video-container video {
-            max-width: 70%;
-            height: auto;
-        }
-
-        .info-contato {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        .formulario-contato {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #333;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        p {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        
-
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-
-
-        .form-grupo {
-            margin-bottom: 15px;
-        }
-
-        .btn-enviar {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #form-whatsapp {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f8f8f8;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        #form-whatsapp label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-    </style>
-
     <header>
         <h1 class="titulo">Contato</h1>
         <nav class="menu">
@@ -146,7 +38,7 @@
         <section class="formulario-contato">
             <h2>Envie uma Mensagem</h2>
             <!-- O formulário agora será controlado por JavaScript para enviar para o WhatsApp -->
-            <div id="form-whatsapp">
+            <form id="form-whatsapp">
                 <div class="form-grupo">
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" required>
@@ -157,7 +49,7 @@
                     <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
                 </div>
                 <button type="button" id="btn-enviar-whatsapp" class="btn-enviar">Enviar via WhatsApp</button>
-            </div>
+            </form>
         </section>
 
         <!-- 
@@ -186,7 +78,7 @@
             }
 
             // Lógica para enviar formulário para o WhatsApp
-            const btnEnviar = document.getElementById('btn-enviar-whatsapp');
+            const btnEnviar = document.getElementById('btn-enviar-whatsapp'); // Corrigido para pegar o botão
             btnEnviar.addEventListener('click', function() {
                 const nome = document.getElementById('nome').value.trim();
                 const mensagem = document.getElementById('mensagem').value.trim();

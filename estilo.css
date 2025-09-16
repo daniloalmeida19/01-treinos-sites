@@ -161,6 +161,12 @@ h1, h2 {
     background-color: var(--cor-texto-secundario);
 }
 
+/* Estilo para o formulário do WhatsApp na página de contato */
+#form-whatsapp {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
 /* Seção de Projetos na página Sobre */
 .projetos {
     margin-top: 40px;
