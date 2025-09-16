@@ -3,15 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>obrigado</title>
+    <title>Obrigado</title>
+    <link rel="stylesheet" href="estilo.css">
     <link rel="shortcut icon" href="icons/sistemas-de-ti.png" type="image/x-icon">
+    <style>
+        /* Estilos específicos para a página de obrigado, se necessário. */
+        .mensagem-obrigado {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: var(--raio-borda);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+            margin: 40px auto;
+        }
+        .mensagem-obrigado h1 {
+            color: var(--cor-primaria);
+        }
+        .mensagem-obrigado p {
+            color: var(--cor-texto-secundario);
+            font-size: 1.1rem;
+        }
+        .mensagem-obrigado a {
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    
-    <h1>Obrigado por entrar em contato!</h1>
-    <p>Sua mensagem foi enviada com sucesso. Responderei o mais breve possível.</p>
-    <a href="index.html">Voltar para a página inicial</a>
-    
-    
+    <header>
+        <h1 class="titulo">Meu Site</h1>
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="mensagem-obrigado">
+            <h1>Obrigado por entrar em contato!</h1>
+            <p>Sua mensagem foi aberta no WhatsApp. Responderei o mais breve possível.</p>
+            <a href="index.html" class="btn-enviar">Voltar para a página inicial</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>

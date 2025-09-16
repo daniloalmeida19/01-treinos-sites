@@ -9,57 +9,6 @@
 </head>
 <body>
 
-    <style>
-        .apresentacao {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .video-container {
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .video-container video {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .projetos {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .lista-projetos {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .lista-projetos li {
-            margin-bottom: 10px;
-        }
-
-        .lista-projetos a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .lista-projetos a:hover {
-            text-decoration: underline;
-        }
-    </style>
-
     <header>
         <h1 class="titulo">Sobre Mim</h1>
         <nav class="menu">
@@ -71,13 +20,18 @@
 
     <main>
       
-        <section class="apresentacao">
+        <section>
             <p>Olá! Meu nome é <strong>Danilo Almeida</strong> e este é um site modelo criado para demonstrar a estrutura básica de uma página HTML.</p>
             <p>Sou apaixonado por desenvolvimento web e estou sempre buscando aprender novas tecnologias e melhorar minhas habilidades.</p>
 
             <div class="video-container">
                 <!-- Vídeo local (coloque o arquivo em uma pasta "videos" no mesmo diretório) -->
-                <video autoplay muted loop playsinline controls>
+                <!-- 
+                    O atributo 'controls' foi removido para esconder a barra de progresso e o tempo.
+                    O vídeo continuará a tocar automaticamente em loop e sem som.
+                    Os estilos para este container de vídeo estão em 'estilo.css'.
+                -->
+                <video autoplay muted loop playsinline>
                     <source src="videos/girando.mp4" type="video/mp4">
                     Seu navegador não suporta vídeo.
                 </video>
